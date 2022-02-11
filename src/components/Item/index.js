@@ -61,7 +61,10 @@ const Item = ({ todo: { text, done }, onToggleDone, onDelete, onTextEdited }) =>
                                 elementRef={editorRef}
                             />
                         )}
-                        renderEditButton={() => { }}
+                        renderEditButton={(props) => {
+                            props.label = `Edit todo "`
+                            return InPlaceEdit.renderDefaultEditButton(props)
+                        }}
                         onChangeMode={(newMode) => {
                             if (newMode === 'view' && text !== value) {
                                 onTextEdited(value)

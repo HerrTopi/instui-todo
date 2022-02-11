@@ -14,9 +14,7 @@ const Footer = ({ filter, onFilter, itemsLeft }) => {
             <Button onClick={onFilter("active")} color={filter === "active" ? "primary-inverse" : "secondary"} margin='small'>Active</Button>
             <Button onClick={onFilter("completed")} color={filter === "completed" ? "primary-inverse" : "secondary"} margin='small'>Completed</Button>
         </Flex.Item>
-        <Flex.Item shouldShrink size="25%">
-
-        </Flex.Item>
+        <Flex.Item shouldShrink size="25%"></Flex.Item>
     </Flex >
 }
 

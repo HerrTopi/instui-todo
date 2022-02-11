@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { TextInput, Heading, Grid } from '@instructure/ui'
-import Item from './components/Item'
-import Footer from './components/Footer'
+import Item from '../components/Item'
+import Footer from '../components/Footer'
 
 const App = () => {
   const [todos, setTodos] = useState([])
@@ -69,7 +69,11 @@ const App = () => {
               )}
         <Grid.Row rowSpacing='none'>
           <Grid.Col>
-            <Footer itemsLeft={todos.filter(({ done }) => !done).length} onFilter={onFilter} filter={filter}></Footer>
+            <Footer
+              itemsLeft={todos.filter(({ done }) => !done).length}
+              onFilter={onFilter}
+              filter={filter}>
+            </Footer>
           </Grid.Col>
         </Grid.Row>
       </Grid >
