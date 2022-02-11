@@ -79,6 +79,11 @@ const Item = ({ todo: { text, done }, onToggleDone, onDelete, onTextEdited }) =>
             <Flex.Item size="40px">
                 <div className="hover-handling">
                     <IconButton onClick={onDelete} color="danger"
+                        themeOverride={{
+                            dangerGhostColor: "grey",
+                            dangerGhostBackground: "white",
+                            dangerGhostHoverBackground: "lightgrey"
+                        }}
                         withBackground={false} withBorder={false} screenReaderLabel="Delete todo">
                         <IconXSolid />
                     </IconButton>
