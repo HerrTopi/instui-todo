@@ -1,15 +1,15 @@
-import {useState, useEffect} from "react"
+import { useState, useEffect } from "react"
 import { Flex, Checkbox, Text, IconButton, IconXSolid, InPlaceEdit } from "@instructure/ui"
 import './style.css'
 
-const Item = ({ todo: { text, done }, onToggleDone, onDelete,onTextEdited }) => {
+const Item = ({ todo: { text, done }, onToggleDone, onDelete, onTextEdited }) => {
 
     const [mode, setMode] = useState('view')
     const [value, setValue] = useState(text)
 
-    useEffect(()=>{
+    useEffect(() => {
         setValue(text)
-    },[text])
+    }, [text])
 
     return <div className="todo-item" style={{
         minHeight: "50px",
@@ -44,26 +44,26 @@ const Item = ({ todo: { text, done }, onToggleDone, onDelete,onTextEdited }) => 
                     <InPlaceEdit
                         renderViewer={() => (
                             <Text size="large">
-                              {value}
+                                {value}
                             </Text>
-                          )
+                        )
                         }
-                        renderEditor={({onBlur, editorRef}) => (
+                        renderEditor={({ onBlur, editorRef }) => (
                             <Text
-                              color="primary"
-                              size="large"
-                              as="input"
-                              type="text"
-                              value={value}
-                              onChange={(e)=>setValue(e.target.value)}
-                              aria-label="The title"
-                              onBlur={onBlur}
-                              elementRef={editorRef}
+                                color="primary"
+                                size="large"
+                                as="input"
+                                type="text"
+                                value={value}
+                                onChange={(e) => setValue(e.target.value)}
+                                aria-label="The title"
+                                onBlur={onBlur}
+                                elementRef={editorRef}
                             />
-                          )}
-                        renderEditButton={()=>{}}
-                        onChangeMode={(newMode)=>{
-                            if(newMode==='view' && text !== value){
+                        )}
+                        renderEditButton={() => { }}
+                        onChangeMode={(newMode) => {
+                            if (newMode === 'view' && text !== value) {
                                 onTextEdited(value)
                             }
                             setMode(newMode)

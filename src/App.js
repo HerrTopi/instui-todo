@@ -58,9 +58,9 @@ const App = () => {
               true).map((todo, index) =>
                 <Grid.Row key={`todo-list-item-${index}`} rowSpacing='none'>
                   <Grid.Col>
-                    <Item 
-                      todo={todo} 
-                      onToggleDone={onToggleDone(todo.id)} 
+                    <Item
+                      todo={todo}
+                      onToggleDone={onToggleDone(todo.id)}
                       onDelete={onDelete(todo.id)}
                       onTextEdited={onTextEdited(todo.id)}
                     />
