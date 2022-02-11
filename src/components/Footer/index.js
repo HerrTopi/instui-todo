@@ -3,7 +3,7 @@ import { Flex, Button } from '@instructure/ui'
 const Footer = ({ filter, onFilter, itemsLeft }) => {
 
 
-    return <Flex>
+    return <Flex as="footer">
         <Flex.Item shouldShrink size="25%">
             <div style={{ color: "grey" }}>
                 {`${itemsLeft} item${itemsLeft === 1 ? "" : "s"} left`}

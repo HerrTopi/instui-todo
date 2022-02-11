@@ -32,7 +32,7 @@ const App = () => {
   }
 
   return (
-    <div style={{ margin: "0 25%" }}>
+    <main style={{ margin: "0 25%" }}>
       <Grid >
         <Grid.Row >
           <Grid.Col textAlign="center">
@@ -77,7 +77,7 @@ const App = () => {
           </Grid.Col>
         </Grid.Row>
       </Grid >
-    </div>
+    </main>
   );
 }
 
