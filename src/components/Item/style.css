@@ -1,6 +1,0 @@
-.hover-handling{
-    display:none 
-}
-.todo-item:hover .hover-handling{
-    display:block
-}

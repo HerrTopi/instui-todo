@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react"
-import { Flex, Checkbox, Text, IconButton, IconXSolid, InPlaceEdit } from "@instructure/ui"
-import './style.css'
+import { Flex, Checkbox, Text, IconButton, IconXSolid, InPlaceEdit, ScreenReaderContent } from "@instructure/ui"
 
 const Item = ({ todo: { text, done }, onToggleDone, onDelete, onTextEdited }) => {
 
@@ -25,7 +24,7 @@ const Item = ({ todo: { text, done }, onToggleDone, onDelete, onTextEdited }) =>
                 <Checkbox
                     checked={done}
                     onChange={(e) => (onToggleDone(e.target.checked))}
-                    label=""
+                    label={<ScreenReaderContent>Completed {text} task</ScreenReaderContent>}
                     themeOverride={done ? {
                         checkedBackground: "lightGrey",
                         checkedBorderColor: "lightGrey"

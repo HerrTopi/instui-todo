@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { TextInput, Heading, Grid } from '@instructure/ui'
+import { TextInput, Heading, Grid, ScreenReaderContent } from '@instructure/ui'
 import Item from '../components/Item'
 import Footer from '../components/Footer'
 
@@ -42,7 +42,7 @@ const App = () => {
         <Grid.Row >
           <Grid.Col textAlign='center'>
             <TextInput
-              renderLabel=" "
+              renderLabel={<ScreenReaderContent>Add new todo</ScreenReaderContent>}
               placeholder="What needs to be done?"
               onKeyPress={handleKeyDown}
               value={todo}
